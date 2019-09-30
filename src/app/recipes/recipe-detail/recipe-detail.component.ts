@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Recipe } from "../recipe";
+import { NgForm } from '@angular/forms';
 
 @Component({
    selector: 'rb-recipe-detail',
@@ -8,6 +9,10 @@ import { Recipe } from "../recipe";
 })
 export class RecipeDetailComponent implements OnInit {
   @Input() selectedRecipe: Recipe;
+
+  addRecipe(nf:NgForm){
+    console.log("Recipe Added!",nf.value);
+  }
 
   constructor() {}
 
