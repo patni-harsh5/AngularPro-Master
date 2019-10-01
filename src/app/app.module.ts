@@ -11,6 +11,8 @@ import { LikeComponent } from './like/like.component';
 import {SharedModule} from './shared.module';
 import { ChildModule } from './child.module';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { DBConnect } from './shared/dbConnect.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,9 @@ import { FormsModule } from '@angular/forms';
     LikeComponent
   ],
   imports: [
-    BrowserModule, ChildModule, SharedModule, FormsModule
+    BrowserModule, ChildModule, SharedModule, FormsModule, HttpClientModule
   ],
-  providers: [RecipeData],
+  providers: [RecipeData, DBConnect],
   bootstrap: [RecipeBookAppComponent]
 })
 export class AppModule {}

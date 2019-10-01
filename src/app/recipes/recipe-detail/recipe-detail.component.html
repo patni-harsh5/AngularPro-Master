@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <img src="{{selectedRecipe?.imagePath}}" alt="" class="img-responsive">
+    <img src="{{selectedRecipe?.imagePath}}" alt="" class="img-responsive" >
   </div>
 </div>
 <div class="row">
@@ -29,7 +29,7 @@
 </div> -->
 
 
-<div class="row" style="border: solid; border-width: 1px;">
+<div class="row">
   <h3>Demo-Form</h3>
   <form (ngSubmit)="addRecipe(f)" #f=ngForm>
     Recipe Name: <input type="text" #name=ngModel ngModel name="recName" required minlength="3" class="form-control" style="width: 50%">
@@ -46,7 +46,7 @@
     <div *ngIf=email.invalid>
     <div *ngIf=email.errors.required style="color: red">
         Email cannot be blank!
-      </div><br>
+      </div>
       <div *ngIf=email.errors.email style="color: red">
           Email is incorrect!
         </div>
@@ -64,4 +64,11 @@
 
     <button type="submit" [disabled]="!f.valid" class="btn btn-success">Submit</button><br> 
   </form>
+  <hr>
+  <button (click)="loadRecipes()" class="btn btn-primary">Load Recipes</button>
+  <ul>
+    <li *ngFor="let ud of loadedPosts">
+      <i><b>{{ud.recName | uppercase}},<br>{{ud.email}},<br>{{ud.price | currency}},<br>{{ud.ing}}</b></i><hr>
+    </li>
+  </ul>
 </div>
