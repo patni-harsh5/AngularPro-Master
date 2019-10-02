@@ -5,6 +5,7 @@ import { HeaderComponent } from "./header.component";
 import { ShoppingListAddComponent } from "./shopping-list/shopping-list-add.component";
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 import {SharedModule} from './shared.module';
+import { AppRouting } from './app.routing';
 
 
 
@@ -21,7 +22,7 @@ import {SharedModule} from './shared.module';
     ShoppingListComponent
   ],
   imports: [
-    BrowserModule, SharedModule
+    BrowserModule, SharedModule, AppRouting
   ],
   
 })
