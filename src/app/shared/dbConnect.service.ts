@@ -6,8 +6,8 @@ import {map} from 'rxjs/operators';
 export class DBConnect{
     addrecipeToDB(recipe:any){
         // console.log("recipe is added to DB!");
-
-        this.http.post('https://harsh-tcs.firebaseio.com/recipe.json',recipe).subscribe(mydata=>{
+        // https://harsh-tcs.firebaseio.com/recipe.json
+        this.http.post('http://localhost:3000/person',recipe).subscribe(mydata=>{
             console.log(mydata);
         })
 
@@ -17,7 +17,7 @@ export class DBConnect{
         // console.log("In DB Service");
         return this.http
         .get(
-          'https://harsh-tcs.firebaseio.com/recipe.json'
+          'http://localhost:3000/people'
         )
         .pipe(
           map(responseData => {
